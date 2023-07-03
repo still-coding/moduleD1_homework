@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ flatpage.title }}</title>
+    <title>{% block title %} {{ flatpage.title }} {% endblock title %}</title>
 </head>
 <body>
-    <h1>{{ flatpage.title }}</h1>
+    <a href="/main">Main</a>
+    <a href="/contacts">Contacts</a>
+    <a href="/about">About</a>
     <hr>
-    <p>
-        {{ flatpage.content }}
-    </p>
+
+    {% block content %}
+    {{ flatpage.content }}
+    {% endblock content %}
 </body>
 </html>
